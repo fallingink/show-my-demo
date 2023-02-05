@@ -20,7 +20,7 @@ const handler = async (event, content) => {
         const res = {
             statusCode: 200,
             body: JSON.stringify({ data: homeObj }),
-            headers: { "Access-Control-Allow-Origin": "https://showmydemo.org/" },
+            headers: { "Access-Control-Allow-Origin": "https://showmydemo.org" },
         }
         return res;
         // return {
