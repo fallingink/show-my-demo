@@ -1,7 +1,5 @@
 <script setup lang="ts">
 import Header from "./components/Header.vue";
-import { themeChange } from "theme-change";
-themeChange(true);
 </script>
 
 <template>
