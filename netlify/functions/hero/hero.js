@@ -9,6 +9,11 @@ const handler = async (event, content) => {
         return {
             statusCode: 200,
             body: JSON.stringify({ data: heroObj }),
+            headers: { 
+                "Access-Control-Allow-Origin": "https://showmydemo.org",
+                "Access-Control-Allow-Headers": "Content-Type",
+                "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE"
+            },
             // // more keys you can return:
             // headers: {
             //     "Access-Control-Allow-Origin": "https://showmydemo.org/",
