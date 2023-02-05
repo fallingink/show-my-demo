@@ -10,7 +10,7 @@
         </li>
         <li>
           <label class="tw-dy-swap tw-swap-rotate">
-            <input @click="themesChange" type="checkbox"/>
+            <input ref="themeChange" type="checkbox"/>
             <svg
               :class="['tw-fill-current tw-w-10 tw-h-10',themesOnType]"
               xmlns="http://www.w3.org/2000/svg"
@@ -40,6 +40,7 @@ import {onMounted, ref,Ref } from "vue";
 const themes:Ref<string|undefined> = ref("winter");
 const themesOnType:Ref<string|undefined> = ref("tw-dy-swap-on");
 const themesOffType:Ref<string|undefined> = ref("tw-dy-swap-off");
+const themeChange = ref<HTMLElement|null>(null);
 // 主题切换
 function themesChange():void{
   if(themes.value === "winter"){
@@ -53,6 +54,7 @@ function themesChange():void{
   }
 }
 
+// 初始化主题
 function initThemes():void{
   const val:string|null = localStorage.getItem("themes");
   themes.value = val as string;
@@ -76,6 +78,7 @@ function initThemes():void{
 //初始化
 onMounted(() => {
   initThemes();
+  themeChange.value?.addEventListener("click", themesChange);
 });
 </script>
 <style module>
