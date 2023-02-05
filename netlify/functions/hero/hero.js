@@ -10,9 +10,9 @@ const handler = async (event, content) => {
             statusCode: 200,
             body: JSON.stringify({ data: heroObj }),
             // // more keys you can return:
-            headers: {
-                AccessControlAllowOrigin: "https://showmydemo.org/"
-            },
+            // headers: {
+            //     "Access-Control-Allow-Origin": "https://showmydemo.org/",
+            // },
             // isBase64Encoded: true,
         }
     } catch (error) {

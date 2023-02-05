@@ -21,7 +21,7 @@ const handler = async (event, content) => {
             statusCode: 200,
             body: JSON.stringify({ data: homeObj }),
             // // more keys you can return:
-            headers: { "Access-Control-Allow-Origin": "https://showmydemo.org/" },
+            // headers: { "Access-Control-Allow-Origin": "https://showmydemo.org/" },
             // isBase64Encoded: true,
         }
     } catch (error) {
