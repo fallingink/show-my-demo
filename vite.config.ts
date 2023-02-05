@@ -7,10 +7,14 @@ export default defineConfig({
     port: 8000,
     proxy: {
       '/api': {
-        target: 'http://localhost:8888',
+        target: 'https://api.showmydemo.org/.netlify/functions/',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, '')
       }
     }
-  }
+  },
+  define: {
+    '/api': "https://api.showmydemo.org/.netlify/functions"
+  },
+  base:"./"
 })

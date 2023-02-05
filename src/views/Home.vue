@@ -5,40 +5,75 @@
       :key="k"
       class="tw-dy-carousel-item tw-h-full"
     >
-        <component :obj="objGive(k)" :is="v" />
+      <component :obj="objGive(k)" :is="v" />
     </div>
   </div>
 </template>
 <script setup lang="ts">
 import Hero from "../components/Hero.vue";
 import DemoEffect from "../components/DemoEffect.vue";
-import { ref } from "vue";
+import { ref, Ref } from "vue";
 import carImg from "../assets/imgs/car.svg";
-import  clockImg from "../assets/imgs/clock.svg";
-const valArr: any = [Hero,DemoEffect,DemoEffect];
-const clock:object = {
-    imgurl:clockImg,
-    imgalt: "clock",
-    title: "时钟效果展示",
-    valArr: [ "采用css结合js实现", "时钟的指针采用css动画实现"],
-    nextTip: "下滑继续",
-    demoType:"clock"
+import clockImg from "../assets/imgs/clock.svg";
+import { axiosGet } from "../../lib/axios";
+const valArr: any = [Hero, DemoEffect, DemoEffect];
+interface clockType {
+  imgurl: string;
+  imgalt?: string;
+  title?: string;
+  varArr?: Array<string>;
+  nextTip?: string;
+  demoType?: string;
 }
-const car:object ={
-    imgurl: carImg,
-    imgalt: "car",
-    title: "小车沿路线走效果展示",
-    valArr: [ "采用svg技术与css3", "小车的移动采用css动画实现"],
-    nextTip: "结束",
-    demoType:"car"
+interface carType {
+  imgurl: string;
+  imgalt?: string;
+  title?: string;
+  varArr?: Array<string>;
+  nextTip?: string;
+  demoType?: string;
 }
-function objGive(v:any){
-    if(v==0){
-        return "";
-    }else if(v==1){
-        return clock;
-    }else{
-        return car;
-    }
+interface initValType {
+  clock: {
+    imgalt: string;
+    title: string;
+    varArr: Array<string>;
+    nextTip: string;
+    demoType: string;
+  };
+  car: {
+    imgalt: string;
+    title: string;
+    varArr: Array<string>;
+    nextTip: string;
+    demoType: string;
+  };
 }
+interface resType {
+  data: initValType;
+}
+const clock:Ref<clockType> = ref({
+  imgurl: clockImg,
+});
+const car:Ref<carType>  = ref({
+  imgurl: carImg,
+});
+function objGive(v: any) {
+  if (v == 0) {
+    return "";
+  } else if (v == 1) {
+    return clock.value;
+  } else {
+    return car.value;
+  }
+}
+
+async function homeInit(): Promise<void> {
+  const res: resType = (await axiosGet("/api/home")) as resType;
+  const initData: initValType = res.data as initValType;
+  clock.value = { ...clock.value, ...initData.clock };
+  car.value = { ...car.value, ...initData.car };
+}
+
+homeInit();
 </script>

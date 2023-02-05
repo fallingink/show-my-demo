@@ -43,10 +43,9 @@ function demoTo():void{
         router.push(`/demo/${props.obj.demoType}}`);
     }
 }
-
 </script>
 <style module>
-.border-radius-none {
+div.border-radius-none {
   border-radius: 0;
 }
 </style>
