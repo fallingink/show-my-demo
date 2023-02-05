@@ -11,6 +11,7 @@ const handler = async (event, content) => {
             body: JSON.stringify({ data: heroObj }),
             // // more keys you can return:
             // headers: { "headerName": "headerValue", ... },
+            origin:"https://showmydemo.org/",
             // isBase64Encoded: true,
         }
     } catch (error) {
