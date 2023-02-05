@@ -56,7 +56,11 @@ function themesChange():void{
 function initThemes():void{
   const val:string|null = localStorage.getItem("themes");
   themes.value = val as string;
-  document.body.setAttribute("data-theme", themes.value);
+  if(val){
+    document.body.setAttribute("data-theme", themes.value);
+  }else{
+    document.body.setAttribute("data-theme", "winter");
+  }
   if (val) {
     if (val === "winter") {
       themesOnType.value = "tw-dy-swap-on";
