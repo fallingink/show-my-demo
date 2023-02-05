@@ -59,6 +59,7 @@ function initThemes():void{
   if(val){
     document.body.setAttribute("data-theme", themes.value);
   }else{
+    localStorage.setItem("themes", "winter");
     document.body.setAttribute("data-theme", "winter");
   }
   if (val) {
