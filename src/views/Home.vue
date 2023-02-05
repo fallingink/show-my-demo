@@ -18,7 +18,7 @@ import clockImg from "../assets/imgs/clock.svg";
 import { axiosGet } from "../../lib/axios";
 const valArr: any = [Hero, DemoEffect, DemoEffect];
 interface clockType {
-  imgurl: string;
+  imgurl?: string;
   imgalt?: string;
   title?: string;
   varArr?: Array<string>;
@@ -26,7 +26,7 @@ interface clockType {
   demoType?: string;
 }
 interface carType {
-  imgurl: string;
+  imgurl?: string;
   imgalt?: string;
   title?: string;
   varArr?: Array<string>;
@@ -34,20 +34,8 @@ interface carType {
   demoType?: string;
 }
 interface initValType {
-  clock: {
-    imgalt: string;
-    title: string;
-    varArr: Array<string>;
-    nextTip: string;
-    demoType: string;
-  };
-  car: {
-    imgalt: string;
-    title: string;
-    varArr: Array<string>;
-    nextTip: string;
-    demoType: string;
-  };
+  clock: clockType;
+  car: carType;
 }
 interface resType {
   data: initValType;

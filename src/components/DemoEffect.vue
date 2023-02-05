@@ -3,7 +3,7 @@
     <figure :class="['tw-w-screen']">
       <img :src="obj.imgurl" :class="['tw-w-full tw-my-0 tw-mx-auto tw-h-full']" :alt="obj.imgalt" />
     </figure>
-    <div :class="['tw-dy-card-body']">
+    <div :class="['tw-dy-card-body tw-grow-0']">
       <h2 class="tw-dy-card-title">{{ obj.title }}</h2>
       <p v-for="(v, k) in obj.valArr" :key="k">
         {{ v }}

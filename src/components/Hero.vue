@@ -7,7 +7,7 @@
         alt="building"
       />
     </figure>
-    <div class="tw-dy-card-body">
+    <div class="tw-dy-card-body tw-grow-0">
       <h2 class="tw-dy-card-title">{{ initVal.title }}</h2>
       <p v-for="(v,k) in initVal.valArr" :key="k" >
         {{ v }}
