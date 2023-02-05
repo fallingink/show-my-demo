@@ -19,7 +19,6 @@
 </template>
 <script lang="ts" setup >
 import { defineProps, Ref, ref } from "vue";
-import { useDemoStore } from "../stores/demo";
 import { useRouter } from "vue-router";
 const props = defineProps({
   obj: {
@@ -27,7 +26,6 @@ const props = defineProps({
     required: true,
   },
 });
-const demoStore:any = useDemoStore();
 const router = useRouter();
 function bounch(): string {
   if (props.obj.nextTip !== "结束") {
@@ -39,10 +37,10 @@ function bounch(): string {
 
 function demoTo():void{
     if(props.obj.demoType){
-        demoStore.setDemoType(props.obj.demoType);
-        router.push(`/demo/${props.obj.demoType}}`);
+        router.push(`/demo/${props.obj.demoType}`);
     }
 }
+
 </script>
 <style module>
 div.border-radius-none {

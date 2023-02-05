@@ -6,4 +6,5 @@
 
 1. git clone this repo
 2. yarn
-3. yarn dev
+3. 注释掉 vite.config.js 中的 define
+4. yarn dev
