@@ -44,16 +44,19 @@ const themesOffType:Ref<string|undefined> = ref("tw-dy-swap-off");
 function themesChange():void{
   if(themes.value === "winter"){
     themes.value = "black";
+    localStorage.setItem("themes", "black");
     document.body.setAttribute("data-theme", "black");
   }else{
     themes.value = "winter";
+    localStorage.setItem("themes", "winter");
     document.body.setAttribute("data-theme", "winter");
   }
 }
 
 function initThemes():void{
-  const val:string|null = localStorage.getItem("theme");
+  const val:string|null = localStorage.getItem("themes");
   themes.value = val as string;
+  document.body.setAttribute("data-theme", themes.value);
   if (val) {
     if (val === "winter") {
       themesOnType.value = "tw-dy-swap-on";
