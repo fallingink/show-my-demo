@@ -17,13 +17,12 @@ const handler = async (event, content) => {
                 demoType: "car"
             }
         }
-        return new Response(JSON.stringify({ data: homeObj }), {
-            headers: {
-                "Access-Control-Allow-Origin": "https://showmydemo.org/",
-                "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE",
-                "Access-Control-Allow-Headers": "Content-Type",
-            },
-        })
+        const res = {
+            statusCode: 200,
+            body: JSON.stringify({ data: homeObj }),
+            headers: { "Access-Control-Allow-Origin": "https://showmydemo.org/" },
+        }
+        return res;
         // return {
         //     statusCode: 200,
         //     body: JSON.stringify({ data: homeObj }),
