@@ -1,6 +1,6 @@
-# show my demo
+# Show My Demo
 
-## just some personal practive demo
+## Just some personal practive demo
 
 ## The way of have it
 
