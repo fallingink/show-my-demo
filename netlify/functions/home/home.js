@@ -17,13 +17,20 @@ const handler = async (event, content) => {
                 demoType: "car"
             }
         }
-        return {
-            statusCode: 200,
-            body: JSON.stringify({ data: homeObj }),
-            // // more keys you can return:
-            // headers: { "Access-Control-Allow-Origin": "https://showmydemo.org/" },
-            // isBase64Encoded: true,
-        }
+        return new Response(JSON.stringify({ data: homeObj }), {
+            headers: {
+                "Access-Control-Allow-Origin": "https://showmydemo.org/",
+                "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE",
+                "Access-Control-Allow-Headers": "Content-Type",
+            },
+        })
+        // return {
+        //     statusCode: 200,
+        //     body: JSON.stringify({ data: homeObj }),
+        //     // // more keys you can return:
+        //     // headers: { "Access-Control-Allow-Origin": "https://showmydemo.org/" },
+        //     // isBase64Encoded: true,
+        // }
     } catch (error) {
         return { statusCode: 500, body: error.toString() }
     }
