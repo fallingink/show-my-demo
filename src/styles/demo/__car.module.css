@@ -1,0 +1,57 @@
+.load {
+    position: relative;
+}
+
+.car {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+    z-index: 999;
+    transform: rotateY(170deg) rotateZ(5deg) translate(18px, -20px);
+}
+
+.carLoad {
+    transition: all 3.4s linear;
+    stroke-dasharray: 100%;
+    stroke-dashoffset: 100%;
+}
+
+@keyframes car {
+    0% {
+        transform: rotateY(170deg) rotateZ(5deg) translate(18px, -20px);
+    }
+
+    12.5% {
+        transform: rotateY(170deg) rotateZ(5deg) translate(-22px, -10px);
+    }
+
+    25% {
+        transform: rotateY(170deg) rotateZ(5deg) translate(-47px, -10px);
+    }
+
+    37.5% {
+        transform: rotateY(170deg) rotateZ(5deg) translate(-77px, 60px);
+    }
+
+    50% {
+        transform: rotateY(170deg) rotateZ(5deg) translate(-132px, 130px);
+    }
+
+    62.25% {
+        transform: rotateY(170deg) rotateZ(5deg) translate(-162px, 60px);
+    }
+
+    75% {
+        transform: rotateY(170deg) rotateZ(5deg) translate(-182px, 30px);
+    }
+
+    87.5% {
+        transform: rotateY(170deg) rotateZ(5deg) translate(-222px, 50px);
+    }
+
+    100% {
+        transform: rotateY(170deg) rotateZ(5deg) translate(-242px, 10px);
+    }
+}
