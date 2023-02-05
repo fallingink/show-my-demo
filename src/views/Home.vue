@@ -13,9 +13,11 @@
 import Hero from "../components/Hero.vue";
 import DemoEffect from "../components/DemoEffect.vue";
 import { ref } from "vue";
+import carImg from "../assets/imgs/car.svg";
+import  clockImg from "../assets/imgs/clock.svg";
 const valArr: any = [Hero,DemoEffect,DemoEffect];
 const clock:object = {
-    imgurl: "/assets/imgs/clock.svg",
+    imgurl:clockImg,
     imgalt: "clock",
     title: "时钟效果展示",
     valArr: [ "采用css结合js实现", "时钟的指针采用css动画实现"],
@@ -23,7 +25,7 @@ const clock:object = {
     demoType:"clock"
 }
 const car:object ={
-    imgurl: "/assets/imgs/car.svg",
+    imgurl: carImg,
     imgalt: "car",
     title: "小车沿路线走效果展示",
     valArr: [ "采用svg技术与css3", "小车的移动采用css动画实现"],
