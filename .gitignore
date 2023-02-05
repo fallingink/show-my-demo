@@ -1,4 +1,5 @@
 # Logs
+.netlify
 logs
 *.log
 npm-debug.log*
