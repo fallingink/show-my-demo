@@ -10,7 +10,7 @@
         </li>
         <li>
           <label class="tw-dy-swap tw-swap-rotate">
-            <input @click="themesChange" type="checkbox" :data-set-theme="themes" />
+            <input @click="themesChange" type="checkbox"/>
             <svg
               :class="['tw-fill-current tw-w-10 tw-h-10',themesOnType]"
               xmlns="http://www.w3.org/2000/svg"
@@ -44,8 +44,10 @@ const themesOffType:Ref<string|undefined> = ref("tw-dy-swap-off");
 function themesChange():void{
   if(themes.value === "winter"){
     themes.value = "black";
+    document.body.setAttribute("data-theme", "black");
   }else{
     themes.value = "winter";
+    document.body.setAttribute("data-theme", "winter");
   }
 }
 
