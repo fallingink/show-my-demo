@@ -17,5 +17,4 @@ export default defineConfig({
   define: {
     '/api': "https://api.showmydemo.org/.netlify/functions"
   },
-  base:"./"
 })
