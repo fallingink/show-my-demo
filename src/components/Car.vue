@@ -39,7 +39,7 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { ref } from "vue";
+import { ref, Ref } from "vue";
 import styles from "../styles/demo/__car.module.css";
 import "../styles/demo/car.css";
 const car = ref<HTMLElement | null>(null);
@@ -73,22 +73,54 @@ const carAnimate = [
     transform: "rotateY(170deg) rotateZ(5deg) translate(-242px, 10px)",
   },
 ];
+const carRunCheck: Ref<boolean> = ref(true);
+const carResetCheck: Ref<boolean> = ref(false);
+let timer: any = ref();
+
+function timerRun() {
+  if (!timer.value) {
+    timer.value = setTimeout(() => {
+      clearInterval(timer.value);
+      timer.value = null;
+    }, 3200);
+    return true;
+  } else {
+    return false;
+  }
+}
+
 function run() {
-  carload.value?.classList.remove("loadReset");
-  carload.value?.classList.add("loadRun");
-  car.value?.animate(carAnimate, {
-    duration: 3000,
-    fill: "forwards",
-  });
+  let bool: boolean = false;
+  if (carRunCheck.value) {
+    bool = timerRun() as boolean;
+  }
+  if (bool) {
+    carload.value?.classList.remove("loadReset");
+    carload.value?.classList.add("loadRun");
+    car.value?.animate(carAnimate, {
+      duration: 3000,
+      fill: "forwards",
+    });
+    carRunCheck.value = false;
+    carResetCheck.value = true;
+  }
 }
 
 function reset() {
-  carload.value?.classList.remove("loadRun");
-  carload.value?.classList.add("loadReset");
-  car.value?.animate(carAnimate, {
-    duration: 3000,
-    direction: "reverse",
-    fill: "forwards",
-  });
+  let bool: boolean = false;
+  if (carResetCheck.value) {
+    bool = timerRun() as boolean;
+  }
+  if (bool) {
+    carload.value?.classList.remove("loadRun");
+    carload.value?.classList.add("loadReset");
+    car.value?.animate(carAnimate, {
+      duration: 3000,
+      direction: "reverse",
+      fill: "forwards",
+    });
+    carRunCheck.value = true;
+    carResetCheck.value = false;
+  }
 }
 </script>

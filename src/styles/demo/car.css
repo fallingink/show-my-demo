@@ -54,3 +54,8 @@
 .carReset{
     animation: car 3s linear reverse;
 }
+
+.carLoadReset{
+    stroke-dasharray: 100%;
+    stroke-dashoffset: 100%;
+}
