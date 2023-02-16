@@ -1,7 +1,9 @@
 <template>
   <div
     :class="[
-      'tw-flex tw-justify-center tw-items-center tw-h-screen tw-text-cyan-200',
+    heroStyles['hero'],
+    'hero',
+      'tw-flex tw-justify-center tw-items-center tw-text-cyan-200 ',
     ]"
   >
     <transition
@@ -37,4 +39,5 @@
 </template>
 <script lang="ts" setup >
 import heroStyles from "../styles/demo/__hero.module.css";
+import "../styles/demo/hero.css";
 </script>

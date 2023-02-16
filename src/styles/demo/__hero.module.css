@@ -1,3 +1,6 @@
-.will-animated{
-    will-change: transform animated;
+.will-animated {
+  will-change: transform animated;
+}
+.hero {
+  height: 400px;
 }

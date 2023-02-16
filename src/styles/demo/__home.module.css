@@ -1,6 +1,6 @@
 .home {
     &-img{
-        height: 120vh;
+        height: 500px;
         z-index: -666;
     }
 }

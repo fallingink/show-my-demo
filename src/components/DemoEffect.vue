@@ -1,5 +1,5 @@
 <template>
-  <div :class="[bgChange(), 'tw-h-screen tw-relative']">
+  <div :class="[bgChange(), demoEffectStyles['demoEffect'],'tw-relative']">
     <transition
       v-show="isShow"
       enter-active-class="animate__animated animate__fadeInLeft"
@@ -7,7 +7,7 @@
     >
       <div
         :class="[
-          'tw-flex tw-flex-col tw-justify-center tw-items-start tw-pl-12 tw-relative tw-left-10 tw-top-16 tw-h-4/5 tw-w-2/3 sm:tw-w-1/2',
+          'tw-flex tw-flex-col tw-justify-center tw-items-start tw-pl-12 tw-relative tw-left-10 tw-top-20 tw-h-4/5 tw-w-2/3 sm:tw-w-1/2',
         ]"
       >
         <div :class="['half']">
