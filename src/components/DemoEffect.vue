@@ -7,10 +7,10 @@
     >
       <div
         :class="[
-          'tw-flex tw-flex-col tw-justify-center tw-items-start tw-pl-12 tw-relative tw-left-10 tw-top-16 tw-h-4/5 tw-w-2/3 tw-bg-teal-400 tw-bg-opacity-80',
+          'tw-flex tw-flex-col tw-justify-center tw-items-start tw-pl-12 tw-relative tw-left-10 tw-top-16 tw-h-4/5 tw-w-2/3 sm:tw-w-1/2',
         ]"
       >
-        <div :class="['half','tw-w-1/3']">
+        <div :class="['half']">
           <h2 :class="['tw-font-mono tw-text-2xl tw-text-blue-700 tw-p-2']" >
             {{ demo.title }}
           </h2>
@@ -30,7 +30,7 @@
     >
       <div
         :class="[
-          'tw-absolute tw-right-16 tw-top-40 tw-h-3/5 tw-w-3/5  tw-bg-opacity-70',
+          'tw-absolute tw-top-0 tw-h-2/5 tw-w-screen sm:tw-right-16 sm:tw-top-40 sm:tw-w-1/2 ',
         ]"
       >
         <img :class="[demoEffectStyles['demoEffect-img']]" :src="demo.src" alt="">
