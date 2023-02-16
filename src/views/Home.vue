@@ -22,9 +22,10 @@ import homeStyles from "../styles/demo/__home.module.css";
 import { shallowRef, onMounted, Ref, ref, defineAsyncComponent } from "vue";
 import carImg from "../assets/imgs/car.svg";
 import clockImg from "../assets/imgs/clock.svg";
-const DemoEffect = defineAsyncComponent(
-  () => import("../components/DemoEffect.vue")
-);
+// const DemoEffect = defineAsyncComponent(
+//   () => import("../components/DemoEffect.vue")
+// );
+import DemoEffect from "../components/DemoEffect.vue";
 const compoments: Ref<any[]> = shallowRef([Hero, DemoEffect, DemoEffect]);
 const lazyEl: Ref<any[]> = ref([]);
 const isShow: Ref<boolean[]> = ref([]);
