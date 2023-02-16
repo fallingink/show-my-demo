@@ -1,16 +1,13 @@
 <script setup lang="ts">
 import Header from "./components/Header.vue";
+import "animate.css";
+import "./styles/demo.css";
 </script>
 
 <template>
-  <Header :class="['h-screen-10']" />
-  <router-view :class="['h-screen-92']" v-slot="{ Component }">
-    <transition name="fade" mode="out-in">
+  <Header/>
+  <router-view v-slot="{ Component }">
       <component :is="Component" />
-    </transition>
   </router-view>
 </template>
 
-<style>
-@import "./styles/demo.css";
-</style>

@@ -1,46 +1,40 @@
 <template>
-  <div :class="['tw-dy-card tw-w-full tw-glass',$style['border-radius-none']]">
-    <figure :class="[$style['border-radius-none']]">
-      <img
-        :class="['tw-w-screen']"
-        src="../assets/imgs/hero.svg"
-        alt="building"
-      />
-    </figure>
-    <div class="tw-dy-card-body tw-grow-0">
-      <h2 class="tw-dy-card-title">{{ initVal.title }}</h2>
-      <p v-for="(v,k) in initVal.valArr" :key="k" >
-        {{ v }}
-      </p>
-      <div class="tw-animate-bounce tw-dy-card-actions tw-justify-end">
-        {{ initVal.nextTip  }}
+  <div
+    :class="[
+      'tw-flex tw-justify-center tw-items-center tw-h-screen tw-text-cyan-200',
+    ]"
+  >
+    <transition
+      :class="[heroStyles['will-animated']]"
+      enter-active-class="animate__animated animate__duration-2s animate__jackInTheBox"
+      appear
+    >
+      <div
+        :class="[
+          'tw-flex tw-flex-col tw-justify-center tw-items-center tw-bg-gray-600 tw-rounded-tl-full tw-rounded-br-full  tw-bg-opacity-90 tw-w-full tw-h-1/3',
+          'md:tw-w-3/4',
+        ]"
+      >
+        <h1
+          :class="[
+            'tw-relative tw-top-10 tw-left-28 tw-text-xl tw-self-start tw-mt-0 tw-mb-auto',
+            'sm:tw-left-28 md:tw-left-32 sm:tw-text-2xl md:tw-text-2xl lg:tw-text-4xl',
+          ]"
+        >
+          Just Some My Demo
+        </h1>
+        <h3
+          :class="[
+            'tw-text-sm tw-mt-0 tw-mb-auto',
+            'sm:tw-text-xl md:tw-text-xl lg:tw-text-2xl',
+          ]"
+        >
+          日常积累的一些demo效果
+        </h3>
       </div>
-    </div>
+    </transition>
   </div>
 </template>
 <script lang="ts" setup >
-import { Ref, ref } from "@vue/reactivity";
-import { axiosGet } from "../../lib/axios";
-const initVal:Ref<initValType> = ref({} as initValType);
-interface initValType{
-    title:string;
-    valArr:Array<string>;
-    nextTip:string;
-}
-interface resType{
-    data:initValType;
-}
-async function heroInit(){
-    const res:resType = await axiosGet("/api/hero") as resType;
-    const initData:initValType = res.data as initValType;
-    if(initData){
-        initVal.value = initData;
-    }
-}
-heroInit();
+import heroStyles from "../styles/demo/__hero.module.css";
 </script>
-<style module>
-div.border-radius-none{
-    border-radius: 0;
-}
-</style>

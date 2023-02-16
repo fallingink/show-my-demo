@@ -8,4 +8,3 @@
 2. yarn
 3. commenting the define which is in vite.config.js
 4. yarn dev
-

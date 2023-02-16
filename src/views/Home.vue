@@ -1,67 +1,60 @@
 <template>
-  <div :class="['tw-dy-carousel tw-dy-carousel-vertical']">
-    <div
-      v-for="(v, k) in valArr"
-      :key="k"
-      class="tw-dy-carousel-item tw-h-full"
-    >
-      <component :obj="objGive(k)" :is="v" />
-    </div>
+  <div>
+    <component
+      :isShow="isShow[key - 1]"
+      :demo="demo[key - 1]"
+      ref="lazyEl"
+      :class="['componentsLazy']"
+      v-for="(item, key) in compoments"
+      :is="item"
+      :key="key"
+    />
+    <img
+      :class="[homeStyles['home-img'], 'tw-absolute tw-top-0 tw-w-full']"
+      src="../assets/imgs/homeBg.jpg"
+      alt=""
+    />
   </div>
 </template>
 <script setup lang="ts">
 import Hero from "../components/Hero.vue";
-import DemoEffect from "../components/DemoEffect.vue";
-import { ref, Ref } from "vue";
+import homeStyles from "../styles/demo/__home.module.css";
+import { shallowRef, onMounted, Ref, ref, defineAsyncComponent } from "vue";
 import carImg from "../assets/imgs/car.svg";
 import clockImg from "../assets/imgs/clock.svg";
-import { axiosGet } from "../../lib/axios";
-const valArr: any = [Hero, DemoEffect, DemoEffect];
-interface clockType {
-  imgurl?: string;
-  imgalt?: string;
-  title?: string;
-  varArr?: Array<string>;
-  nextTip?: string;
-  demoType?: string;
-}
-interface carType {
-  imgurl?: string;
-  imgalt?: string;
-  title?: string;
-  varArr?: Array<string>;
-  nextTip?: string;
-  demoType?: string;
-}
-interface initValType {
-  clock: clockType;
-  car: carType;
-}
-interface resType {
-  data: initValType;
-}
-const clock:Ref<clockType> = ref({
-  imgurl: clockImg,
-});
-const car:Ref<carType>  = ref({
-  imgurl: carImg,
-});
-function objGive(v: any) {
-  if (v == 0) {
-    return "";
-  } else if (v == 1) {
-    return clock.value;
-  } else {
-    return car.value;
+const DemoEffect = defineAsyncComponent(
+  () => import("../components/DemoEffect.vue")
+);
+const compoments: Ref<any[]> = shallowRef([Hero, DemoEffect, DemoEffect]);
+const lazyEl: Ref<any[]> = ref([]);
+const isShow: Ref<boolean[]> = ref([]);
+const viewHeight = window.innerHeight || document.documentElement.clientHeight;
+const demo = [{
+  title:"Clock",
+  desc:"表盘时钟，使用css3实现",
+  btn:"查看",
+  key:1,
+  src:clockImg
+},{
+  title:"Car",
+  desc:"汽车走路线动画，使用css3加svg实现",
+  btn:"查看",
+  key:2,
+  src:carImg
+}]
+function lazyLoad(...args: any) {
+  const lazyEl = document.querySelectorAll(".componentsLazy");
+  // const distance = viewHeight - args[0]?.target.getBoundingClientRect().top;
+  for(let i = 0;i < lazyEl.length;i++) {
+    const distance = viewHeight - lazyEl[i].getBoundingClientRect().top;
+    console.log(i,distance);
+    if (distance >= 0 && i - 1 >= 0) {
+      isShow.value[i-1] = true;
+    }
   }
 }
-
-async function homeInit(): Promise<void> {
-  const res: resType = (await axiosGet("/api/home")) as resType;
-  const initData: initValType = res.data as initValType;
-  clock.value = { ...clock.value, ...initData.clock };
-  car.value = { ...car.value, ...initData.car };
-}
-
-homeInit();
+onMounted(() => {
+  lazyLoad();
+  window.addEventListener("scroll", lazyLoad);
+});
 </script>

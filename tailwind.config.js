@@ -14,12 +14,10 @@ module.exports = {
   plugins: [require("daisyui")],
   daisyui: {
     styled: true,
-    themes: ["winter", "black"],
     base: true,
     utils: true,
     logs: true,
     rtl: false,
-    darkTheme: "black",
     prefix:"dy-",
   },
 }

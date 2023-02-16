@@ -1,0 +1,6 @@
+.home {
+    &-img{
+        height: 120vh;
+        z-index: -666;
+    }
+}

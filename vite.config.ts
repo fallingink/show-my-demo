@@ -14,7 +14,8 @@ export default defineConfig({
     }
   },
   //开发时注释掉
-  define: {
-    '/api': "https://api.showmydemo.org/.netlify/functions"
-  },
+  // define: {
+  //   '/api': "https://api.showmydemo.org/.netlify/functions"
+  // },
 })
+
