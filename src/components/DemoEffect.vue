@@ -2,7 +2,7 @@
   <div :class="[bgChange(), demoEffectStyles['demoEffect'],'tw-relative']">
     <transition
       v-show="isShow"
-      enter-active-class="animate__animated animate__fadeInLeft"
+      enter-active-class="animate__animated animate__zoomIn"
       appear
     >
       <div
@@ -25,7 +25,7 @@
     </transition>
     <transition
       v-show="isShow"
-      enter-active-class="animate__animated  animate__fadeInTopRight"
+      enter-active-class="animate__animated  animate__zoomIn"
       appear
     >
       <div
