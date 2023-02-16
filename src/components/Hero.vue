@@ -6,7 +6,7 @@
   >
     <transition
       :class="[heroStyles['will-animated']]"
-      enter-active-class="animate__animated animate__duration-2s animate__jackInTheBox"
+      enter-active-class="animate__animated animate__delay-1s animate__jackInTheBox"
       appear
     >
       <div

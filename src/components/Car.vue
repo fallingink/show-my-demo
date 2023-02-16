@@ -4,38 +4,50 @@
       ref="load"
       :class="[styles.load, 'tw-flex tw-justify-center tw-items-center']"
     >
-      <div ref="car" :class="[styles.car]">
-        <img src="../assets/imgs/bmw-158704.svg" alt="" />
-      </div>
-      <svg x="0" y="0" width="400" height="400">
-        <path
-          stroke-width="5"
-          d="M 0 0 C 40 10, 65 10, 95 80 S 150 150, 180 80 C 200 50,240 80, 260 30"
-          stroke="black"
-          fill="transparent"
-        />
-        <path
-          ref="carload"
-          :class="[styles.carLoad]"
-          stroke-width="5"
-          d="M 0 0 C 40 10, 65 10, 95 80 S 150 150, 180 80 C 200 50,240 80, 260 30"
-          stroke="lightblue"
-          fill="transparent"
-        />
-      </svg>
+      <transition-group
+        enter-active-class="animate__animated animate__delay-1s animate__zoomIn"
+        appear
+      >
+        <div key="car" ref="car" :class="[styles.car]">
+          <img src="../assets/imgs/bmw-158704.svg" alt="" />
+        </div>
+        <svg key="svg" x="0" y="0" width="400" height="400">
+          <path
+            stroke-width="5"
+            d="M 0 0 C 40 10, 65 10, 95 80 S 150 150, 180 80 C 200 50,240 80, 260 30"
+            stroke="black"
+            fill="transparent"
+          />
+          <path
+            ref="carload"
+            :class="[styles.carLoad]"
+            stroke-width="5"
+            d="M 0 0 C 40 10, 65 10, 95 80 S 150 150, 180 80 C 200 50,240 80, 260 30"
+            stroke="lightblue"
+            fill="transparent"
+          />
+        </svg>
+      </transition-group>
     </div>
-    <button
-      @click="run"
-      :class="['tw-dy-btn tw-dy-btn-active tw-w-full tw-relative tw-z-10']"
+    <transition-group
+      enter-active-class="animate__animated animate__delay-2s  animate__fadeInUp"
+      appear
     >
-      开启跑动
-    </button>
-    <button
-      @click="reset"
-      :class="['tw-dy-btn tw-dy-btn-active tw-dy-btn-primary tw-w-full tw-relative tw-z-10']"
-    >
-      重置
-    </button>
+      <button
+        key="run"
+        @click="run"
+        :class="['tw-dy-btn-accent tw-w-full tw-relative tw-z-10']"
+      >
+        开启跑动
+      </button>
+      <button
+        key="reset"
+        @click="reset"
+        :class="['tw-dy-btn-primary tw-w-full tw-relative tw-z-10']"
+      >
+        重置
+      </button>
+    </transition-group>
   </div>
 </template>
 <script lang="ts" setup>

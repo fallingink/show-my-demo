@@ -1,17 +1,27 @@
 <template>
-  <div ref="clock" :class="[styles.clock]">
-    <div ref="scale" :class="[styles.scale]"></div>
-    <div :class="styles['clock-point']">
-      <div
-        ref="secondHand"
-        :class="[styles['second-hand'], styles['hand']]"
-      ></div>
-      <div
-        ref="minuteHand"
-        :class="[styles['minute-hand'], styles['hand']]"
-      ></div>
-      <div ref="hourHand" :class="[styles['hour-hand'], styles['hand']]"></div>
-    </div>
+  <div :class="[styles['clock-bg']]">
+    <transition
+      enter-active-class="animate__animated  animate__fadeInUp"
+      appear
+    >
+      <div ref="clock" :class="[styles.clock]">
+        <div ref="scale" :class="[styles.scale]"></div>
+        <div :class="styles['clock-point']">
+          <div
+            ref="secondHand"
+            :class="[styles['second-hand'], styles['hand']]"
+          ></div>
+          <div
+            ref="minuteHand"
+            :class="[styles['minute-hand'], styles['hand']]"
+          ></div>
+          <div
+            ref="hourHand"
+            :class="[styles['hour-hand'], styles['hand']]"
+          ></div>
+        </div>
+      </div>
+    </transition>
   </div>
 </template>
 
