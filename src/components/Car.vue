@@ -26,13 +26,13 @@
     </div>
     <button
       @click="run"
-      :class="['tw-dy-btn tw-dy-btn-active tw-w-full ']"
+      :class="['tw-dy-btn tw-dy-btn-active tw-w-full tw-relative tw-z-10']"
     >
       开启跑动
     </button>
     <button
       @click="reset"
-      :class="['tw-dy-btn tw-dy-btn-active tw-dy-btn-primary tw-w-full']"
+      :class="['tw-dy-btn tw-dy-btn-active tw-dy-btn-primary tw-w-full tw-relative tw-z-10']"
     >
       重置
     </button>
