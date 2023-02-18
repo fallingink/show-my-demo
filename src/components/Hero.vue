@@ -3,7 +3,7 @@
     :class="[
     heroStyles['hero'],
     'hero',
-      'tw-flex tw-justify-center tw-items-center tw-text-cyan-200 ',
+      'tw-flex tw-justify-center tw-items-center tw-text-cyan-200',
     ]"
   >
     <transition
@@ -13,7 +13,7 @@
     >
       <div
         :class="[
-          'tw-flex tw-flex-col tw-justify-center tw-items-center tw-bg-gray-600 tw-rounded-tl-full tw-rounded-br-full  tw-bg-opacity-90 tw-w-full tw-h-1/3',
+          'tw-absolute tw-flex tw-flex-col tw-justify-center tw-items-center tw-bg-gray-600 tw-rounded-tl-full tw-rounded-br-full  tw-bg-opacity-90 tw-w-full tw-h-1/3',
           'md:tw-w-3/4',
         ]"
       >
@@ -39,5 +39,4 @@
 </template>
 <script lang="ts" setup >
 import heroStyles from "../styles/demo/__hero.module.css";
-import "../styles/demo/hero.css";
 </script>

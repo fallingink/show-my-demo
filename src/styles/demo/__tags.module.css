@@ -1,27 +1,27 @@
-.tags{
-    &-bg::before{
-        content: '';
-        position: fixed;
-        display: block;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
-        background-color: #e9f5ff;
+.tags {
+  &-bg::before {
+    content: "";
+    position: fixed;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-color: #e9f5ff;
+  }
+  &-balloon {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    div {
+      background-color: #139dad;
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
-    &-balloon{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        div{
-            background-color: #139dad;
-            border-radius: 50%;
-            width: 100px;
-            height: 100px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-    }
+  }
 }

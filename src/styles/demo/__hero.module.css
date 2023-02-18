@@ -4,3 +4,8 @@
 .hero {
   height: 420px;
 }
+@media (min-width: 640px) {
+  .hero{
+    height: 85vh;
+  }
+}
