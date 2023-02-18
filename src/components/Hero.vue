@@ -13,13 +13,13 @@
     >
       <div
         :class="[
-          'tw-absolute tw-flex tw-flex-col tw-justify-center tw-items-center tw-bg-gray-600 tw-rounded-tl-full tw-rounded-br-full  tw-bg-opacity-90 tw-w-full tw-h-1/3',
+          'tw-absolute tw-p-20 tw-flex tw-flex-col tw-justify-center tw-items-center tw-bg-gray-600 tw-rounded-tl-full tw-rounded-br-full  tw-bg-opacity-90 tw-w-full tw-h-1/3',
           'md:tw-w-3/4',
         ]"
       >
         <h1
           :class="[
-            'tw-relative tw-top-10 tw-left-28 tw-text-xl tw-self-start tw-mt-0 tw-mb-auto',
+            'tw-relative tw-text-xl tw-self-start',
             'sm:tw-left-28 md:tw-left-32 sm:tw-text-2xl md:tw-text-2xl lg:tw-text-4xl',
           ]"
         >
@@ -27,7 +27,7 @@
         </h1>
         <h3
           :class="[
-            'tw-text-sm tw-mt-0 tw-mb-auto',
+            'tw-text-sm',
             'sm:tw-text-xl md:tw-text-xl lg:tw-text-2xl',
           ]"
         >

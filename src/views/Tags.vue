@@ -36,7 +36,6 @@ function elTop() {
   const top = ["tw-top-4", "tw-top-7", "tw-top-9", "tw-top-12"];
   const mar = ["tw-mx-16", "tw-mx-17", "tw-mx-18", "tw-mx-20"];
   const random = Math.floor(Math.random() * 4);
-  console.log(random);
   return top[random] + " " + mar[random];
 }
 </script>
