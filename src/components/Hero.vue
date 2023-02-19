@@ -7,8 +7,8 @@
     ]"
   >
     <transition
-      :class="[heroStyles['will-animated']]"
-      enter-active-class="animate__animated animate__delay-1s animate__jackInTheBox"
+      :class="[heroStyles['will-animated'],'tw-absolute']"
+      enter-active-class="animate__animated  animate__jackInTheBox"
       appear
     >
       <div

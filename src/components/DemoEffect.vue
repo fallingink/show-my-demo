@@ -1,11 +1,11 @@
 <template>
   <div :class="[bgChange(), demoEffectStyles['demoEffect'], 'tw-relative']">
-    <div ref="demoEl" class="demo-left">
-      <transition enter-active-class="animate__animated animate__zoomIn" appear>
+    <div ref="demoEl">
+      <transition enter-active-class="animate__animated animate__bounceInRight" >
         <div
           v-show="isShow"
           :class="[
-            'tw-flex tw-flex-col tw-justify-center tw-items-start tw-pl-12 tw-relative tw-top-40 tw-h-4/5 tw-w-2/3 sm:tw-top-20 sm:tw-left-10 sm:tw-w-1/2',
+            'tw-absolute tw-flex tw-flex-col tw-justify-center tw-items-start tw-pl-12  tw-top-20 tw-h-4/5 tw-w-2/3  sm:tw-left-10 sm:tw-w-1/2',
           ]"
         >
           <div :class="['half']">
@@ -22,7 +22,7 @@
         </div>
       </transition>
     </div>
-    <transition enter-active-class="animate__animated  animate__zoomIn" appear>
+    <transition enter-active-class="animate__animated  animate__bounceInLeft" >
       <div
         v-show="isShow"
         :class="[

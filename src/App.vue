@@ -5,15 +5,14 @@ import "./styles/demo.css";
 </script>
 
 <template>
-  <Header />
-  <router-view v-slot="{ Component }">
-    <transition
-      enter-active-class="animate__animated animate__fadeIn"
-      leave-active-class="animate__animated animate__fadeOut"
-      appear
-    >
+  <Header :class="['tw-relative tw-z-10']" />
+  <transition
+    enter-active-class="animate__animated animate__fadeIn"
+    leave-active-class="animate__animated animate__fadeOut"
+  >
+    <router-view v-slot="{ Component }">
       <component :is="Component" />
-    </transition>
-  </router-view>
+    </router-view>
+  </transition>
 </template>
 

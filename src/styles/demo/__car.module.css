@@ -1,6 +1,7 @@
 .load {
     position: relative;
-    top: 30vh;
+    top: 26vh;
+    left:10vw;
 }
 
 .load::before{
