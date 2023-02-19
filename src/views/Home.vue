@@ -9,7 +9,7 @@
       :key="key"
     />
     <img
-      :class="[homeStyles['home-img'], 'tw-absolute tw-top-0 tw-w-full sm:tw-h-full']"
+      :class="[homeStyles['home-img'], 'tw-absolute tw-top-0 tw-w-full sm:tw-h-screen']"
       src="../assets/imgs/homeBg.jpg"
       alt=""
     />

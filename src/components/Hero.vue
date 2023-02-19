@@ -8,7 +8,7 @@
   >
     <transition
       :class="[heroStyles['will-animated'],'tw-absolute']"
-      enter-active-class="animate__animated  animate__jackInTheBox"
+      enter-active-class="animate__animated  animate__zoomIn"
       appear
     >
       <div
