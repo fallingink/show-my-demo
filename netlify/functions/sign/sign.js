@@ -26,12 +26,12 @@ const sign = async (event, context) => {
                             throw err;
                         }
                         console.log(rows);
+                        return {
+                            statusCode: 200,
+                            body: JSON.stringify({ data: rows }),
+                        }
                     });
                     console.log("serialize", db);
-                    return {
-                        statusCode: 200,
-                        body: JSON.stringify({ data: "register" }),
-                    }
                 default:
                     return {
                         statusCode: 401,
