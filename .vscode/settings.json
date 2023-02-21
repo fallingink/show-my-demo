@@ -1,0 +1,17 @@
+{
+    "sqltools.useNodeRuntime": true,
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "sign",
+            "database": "${workspaceFolder:func-node}/netlify/functions/sign/db.sqlite"
+        },
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "database": "E:\\codes\\interview\\django-black-dashboard\\db.sqlite3",
+            "name": "test"
+        }
+    ]
+}

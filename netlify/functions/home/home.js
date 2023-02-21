@@ -4,16 +4,16 @@ const handler = async (event, content) => {
         const homeObj = {
             clock: {
                 imgalt: "clock",
-                title: "时钟效果展示",
+                title: "时钟效果",
                 valArr: ["采用css结合js实现", "时钟的指针采用css动画实现"],
-                nextTip: "下滑继续",
+                type: "下滑继续",
                 demoType: "clock"
             },
             car: {
                 imgalt: "car",
-                title: "小车沿路线走效果展示",
+                title: "小车沿路线走效果",
                 valArr: ["采用svg技术与css3", "小车的移动采用css动画实现"],
-                nextTip: "结束",
+                type: "结束",
                 demoType: "car"
             }
         }
